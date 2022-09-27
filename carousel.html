@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link href="assets/img/ican_logo.jpg" rel="icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/naci/css/naci.css" />
+    <style>
+      #proparallax {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        min-height: 23.5rem;
+        border: 10px solid black;
+        box-shadow: 0px 8px 10px 8px grey;
+      }
+
+      #proparallax img {
+        position: absolute;
+        width: 50rem;
+        height: 23.5rem;
+        overflow: hidden;
+        object-fit: cover;
+      }
+
+      @keyframes parallax_one {
+        /* controls img.one movement */
+        0% {
+          /* .imageloaded */
+          height: 23.5rem;
+          width: 50rem;
+          left: 0rem;
+          opacity: 1;
+        }
+        /* .imagehold runs from 0 to 27.77% */
+        27.77% {
+          /* .imageloaded */
+          width: 50rem;
+          left: 0rem;
+        }
+        27.78% {
+          /* .imagepreunload */
+          width: 50rem;
+          left: 0rem;
+          right: 50rem;
+        }
+        33.33% {
+          /* .imageunloaded */
+          height: 23.5rem;
+          width: 0rem;
+          left: 0rem;
+          right: 0rem;
+          opacity: 1;
+        }
+        33.34% {
+          /* imageoff */
+          opacity: 0;
+        }
+        94.43% {
+          /* .imageon */
+          left: 0rem;
+          opacity: 0;
+        }
+        94.44% {
+          /* .imageinitial */
+          height: 23.5rem;
+          width: 0rem;
+          left: 50rem;
+          opacity: 1;
+        }
+        100% {
+          /* .imageloaded */
+          width: 50rem;
+          left: 0rem;
+          opacity: 1;
+        }
+      }
+
+      @keyframes parallax_two {
+        /* controls img.two movement */
+        0% {
+          /* .imageoff */
+          opacity: 0;
+        }
+        27.77% {
+          /* .imageon */
+          left: 0rem;
+          opacity: 0;
+        }
+        27.78% {
+          /* .imageinitial */
+          width: 0rem;
+          height: 23.5rem;
+          left: 50rem;
+          opacity: 1;
+        }
+        33.33% {
+          /* .imageloaded */
+          width: 50rem;
+          left: 0rem;
+        }
+        /* .imagehold runs from 33.34% - 61.10% */
+        61.10% {
+          /* .imageloaded */
+          width: 50rem;
+          left: 0rem;
+        }
+        61.11% {
+          /* .imagepreunload */
+          width: 50rem;
+          left: 0rem;
+          right: 50rem;
+        }
+        66.67% {
+          /* .imageunloaded */
+          width: 0rem;
+          right: 0rem;
+          left: 0rem;
+          height: 23.5rem;
+          opacity: 1;
+        }
+        66.68% {
+          /* .imageoff */
+          opacity: 0;
+        }
+        100% {
+          /* .imageoff */
+          opacity: 0;
+        }
+      }
+
+      @keyframes parallax_three {
+        /* controls img.three movement */
+        0% {
+          /* .imageoff */
+          opacity: 0;
+        }
+        61.10% {
+          /* .imageon */
+          opacity: 0;
+        }
+        61.11% {
+          /* .imageinitial */
+          width: 0rem;
+          height: 23.5rem;
+          left: 50rem;
+          opacity: 1;
+        }
+        66.67% {
+          /* .imageloaded */
+          width: 50rem;
+          left: 0rem;
+        }
+        /* .imagehold runs from 66.67% - 94.43% */
+        94.43% {
+          /* .imageloaded */
+          width: 50rem;
+          left: 0rem;
+        }
+        94.44% {
+          /* .imagepreunload */
+          width: 50rem;
+          left: 0rem;
+          right: 50rem;
+        }
+        100% {
+          /* imageunloaded */
+          width: 0rem;
+          right: 0rem;
+          left: 0rem;
+          height: 23.5rem;
+          opacity: 1;
+        }
+      }
+
+      #proparallax img.one {
+        animation-name: parallax_one; /* controls img.one movement */
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 18s;
+        animation-direction: forwards;
+        object-fit: cover;
+      }
+
+      #proparallax img.two {
+        animation-name: parallax_two; /* controls img.two movement */
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 18s;
+        animation-direction: forwards;
+        object-fit: cover;
+      }
+
+      #proparallax img.three {
+        animation-name: parallax_three; /* controls img.three movement */
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 18s;
+        animation-direction: forwards;
+        object-fit: cover;
+      }
+      .carousel-item {
+        height: 90vh;
+        min-height: 350px;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      .carousel-caption {
+        text-align: left !important;
+        bottom: 180px;
+      }
+      .Icantext {
+        font-family: Goudy Old Style, Garamond, "Big Caslon", "Times New Roman",
+          serif;
+        /* font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal,
+          "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black",
+          "sans serif"; */
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 700;
+        /* line-height: 17.6px; */
+        font-size: 75px;
+      }
+      .slide-right {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .slide-right {
+        animation: 2s slide-right;
+        /* animation-delay: 2s; */
+      }
+
+      @keyframes slide-right {
+        from {
+          margin-left: -300px;
+        }
+
+        to {
+          margin-left: 0%;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        /*Big smartphones [426px -> 600px]*/
+        .Icantext {
+          font-family: "Comic Sans MS", cursive, sans-serif;
+          font-size: 25px;
+        }
+        .carousel-caption {
+          text-align: left !important;
+          bottom: 450px;
+        }
+      }
+      @media only screen and (max-width: 425px) {
+        /*Small smartphones [325px -> 425px]*/
+        .Icantext {
+          font-family: "Comic Sans MS", cursive, sans-serif;
+          font-size: 15px;
+        }
+        .carousel-caption {
+          text-align: left !important;
+          bottom: 450px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shadow py-2">
+      <div class="contain">
+        <input type="checkbox" name="" id="check" />
+
+        <div class="logo-contain">
+          <!-- <h3 class="logo">Brand<span>Name</span></h3> -->
+          <a href="index.html" class="logo align-items-center">
+            <img src="assets/img/ican_logo.png" alt="" style="height: 50px" />
+          </a>
+        </div>
+
+        <div class="nav-btn">
+          <div class="nav-links">
+            <ul>
+              <li class="nav-link" style="--i: 0.6s">
+                <a href="#">Home</a>
+              </li>
+              <li class="nav-link" style="--i: 0.6s">
+                <a href="#">Members</a>
+              </li>
+              <li class="nav-link" style="--i: 0.85s">
+                <a href="#">Students<i class="fa fa-caret-down"></i></a>
+                <div class="dropdown">
+                  <ul>
+                    <li class="dropdown-link">
+                      <a href="#">My ICAN<i class="fa fa-caret-down"></i></a>
+                      <div class="dropdown second">
+                        <ul class="overflow-y-scroll hide-scroll h-96">
+                          <li class="dropdown-link">
+                            <a href="#">Financial Status</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Application for Induction</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Profile Update</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Financial Status</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Application for Induction</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Profile Update</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Financial Status</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Application for Induction</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Profile Update</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Financial Status</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Application for Induction</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Profile Update</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">More<i class="fa fa-caret-down"></i></a>
+                            <div class="dropdown second">
+                              <ul>
+                                <li class="dropdown-link">
+                                  <a href="#">Link 1</a>
+                                </li>
+                                <li class="dropdown-link">
+                                  <a href="#">Link 2</a>
+                                </li>
+                                <li class="dropdown-link">
+                                  <a href="#">Link 3</a>
+                                </li>
+                                <div class="arrow"></div>
+                              </ul>
+                            </div>
+                          </li>
+                          <div class="arrow"></div>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="dropdown-link">
+                      <a href="#">Link 1</a>
+                    </li>
+                    <li class="dropdown-link">
+                      <a href="#">Link 2</a>
+                    </li>
+                    <li class="dropdown-link">
+                      <a href="#">Link 3<i class="fa fa-caret-down"></i></a>
+                      <div class="dropdown second">
+                        <ul>
+                          <li class="dropdown-link">
+                            <a href="#">Link 1</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Link 2</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Link 3</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">More<i class="fa fa-caret-down"></i></a>
+                            <div class="dropdown second">
+                              <ul>
+                                <li class="dropdown-link">
+                                  <a href="#">Link 1</a>
+                                </li>
+                                <li class="dropdown-link">
+                                  <a href="#">Link 2</a>
+                                </li>
+                                <li class="dropdown-link">
+                                  <a href="#">Link 3</a>
+                                </li>
+                                <div class="arrow"></div>
+                              </ul>
+                            </div>
+                          </li>
+                          <div class="arrow"></div>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="dropdown-link">
+                      <a href="#">Link 4</a>
+                    </li>
+                    <div class="arrow"></div>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-link" style="--i: 1.1s">
+                <a href="#">Services<i class="fa fa-caret-down"></i></a>
+                <div class="dropdown">
+                  <ul>
+                    <li class="dropdown-link">
+                      <a href="#">Link 1</a>
+                    </li>
+                    <li class="dropdown-link">
+                      <a href="#">Link 2</a>
+                    </li>
+                    <li class="dropdown-link">
+                      <a href="#">Link 3<i class="fa fa-caret-down"></i></a>
+                      <div class="dropdown second">
+                        <ul>
+                          <li class="dropdown-link">
+                            <a href="#">Link 1</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Link 2</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">Link 3</a>
+                          </li>
+                          <li class="dropdown-link">
+                            <a href="#">More<i class="fa fa-caret-down"></i></a>
+                            <div class="dropdown second">
+                              <ul>
+                                <li class="dropdown-link">
+                                  <a href="#">Link 1</a>
+                                </li>
+                                <li class="dropdown-link">
+                                  <a href="#">Link 2</a>
+                                </li>
+                                <li class="dropdown-link">
+                                  <a href="#">Link 3</a>
+                                </li>
+                                <div class="arrow"></div>
+                              </ul>
+                            </div>
+                          </li>
+                          <div class="arrow"></div>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="dropdown-link">
+                      <a href="#">Link 4</a>
+                    </li>
+                    <div class="arrow"></div>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-link" style="--i: 1.35s">
+                <a href="#">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="relative text-gray-600 mt-1">
+            <input
+              type="search"
+              name="serch"
+              placeholder="Search"
+              class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" />
+            <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+              <svg
+                class="h-4 w-4 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                id="Capa_1"
+                x="0px"
+                y="0px"
+                viewBox="0 0 56.966 56.966"
+                style="enable-background: new 0 0 56.966 56.966"
+                xml:space="preserve"
+                width="512px"
+                height="512px">
+                <path
+                  d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hamburger-menu-contain">
+          <div class="hamburger-menu">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      id="carouselExampleFade"
+      class="carousel carousel-dark slide carousel-fade"
+      data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="assets/img/1business-lady.png"
+            class="d-block w-100"
+            alt="..." />
+          <div class="carousel-caption slide-right">
+            <h5 class="Icantext">ICAN slide label</h5>
+            <p>
+              This is not an advert section <br />
+              Rather it is just some ICAN qualities.
+            </p>
+            <br /><a
+              href="profile_update.html"
+              class="Icanbtn btn btn-primary btn-sm"
+              >Get Started</a
+            >
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="assets/img/1business-man.png"
+            class="d-block w-100"
+            alt="..." />
+          <div class="carousel-caption slide-right">
+            <h5 class="Icantext">Second slide label</h5>
+            <p>
+              The advert section with all posters <br />
+              is just a little bit below.
+            </p>
+            <br /><a
+              href="profile_update.html"
+              class="Icanbtn btn btn-primary btn-sm"
+              >Get Started</a
+            >
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="assets/img/business-3528035_1280.jpg"
+            class="d-block w-100"
+            alt="..." />
+          <div class="carousel-caption slide-right">
+            <h5 class="Icantext">Third slide label</h5>
+            <p>
+              Some representative placeholder <br />
+              content for getting to know ICAN more.
+            </p>
+            <br /><a
+              href="profile_update.html"
+              class="Icanbtn btn btn-primary btn-sm"
+              >Get Started</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="d-none d-md-block">
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Qualities -->
+    <div
+      class="container naci-100 mt-5 mb-12 mx-auto max-w-5xl flex gap-12 flex-wrap items-start justify-center md:justify-between">
+      <div
+        class="grid gap-4 justify-items-center text-center md:flex-1 headline1">
+        <div class="rounded-full border-8 border-blue-800 p-4">
+          <a
+            href="https://icanportal.org/members/Account/Login?ReturnUrl=%2Fmembers%2FeLearnings"
+            ><i class="fa-solid fa-users fa-2x font-green-600"></i
+          ></a>
+        </div>
+        <a
+          href="https://icanportal.org/members/Account/Login?ReturnUrl=%2Fmembers%2FeLearnings"
+          ><h3 class="text-3xl font-bold">ICAN E-Learning</h3></a
+        >
+      </div>
+      <div
+        class="grid gap-4 justify-items-center text-center md:flex-1 headline2">
+        <div class="rounded-full border-8 border-blue-800 p-4">
+          <a
+            class="font-green-600"
+            href="https://icanig.org/speeches-presentations"
+            ><i class="fa-solid fa-microphone fa-2x font-green-600"></i
+          ></a>
+        </div>
+        <a href="https://icanig.org/speeches-presentations"
+          ><h3 class="text-3xl font-bold">Speeches & Presentations</h3></a
+        >
+      </div>
+      <div
+        class="grid gap-4 justify-items-center text-center md:flex-1 headline3">
+        <div class="rounded-full border-8 border-blue-800 p-4">
+          <a
+            href="https://icanportal.org/members/Account/Login?ReturnUrl=%2Fmembers%2FeLearnings"
+            ><i
+              class="fa-sharp fa-solid fa-building-columns fa-2x font-green-600"></i
+          ></a>
+        </div>
+        <a
+          href="https://icanportal.org/members/Account/Login?ReturnUrl=%2Fmembers%2FeLearnings"
+          ><h3 class="text-3xl font-bold">Find a Faculty</h3></a
+        >
+      </div>
+      <div
+        class="grid gap-4 justify-items-center text-center md:flex-1 headline4">
+        <div class="rounded-full border-8 border-blue-800 p-4">
+          <a
+            href="https://icanportal.org/members/Account/Login?ReturnUrl=%2Fmembers%2FeLearnings"
+            ><i class="fa-solid fa-graduation-cap fa-2x font-green-600"></i
+          ></a>
+        </div>
+        <a
+          href="https://icanportal.org/members/Account/Login?ReturnUrl=%2Fmembers%2FeLearnings"
+          ><h3 class="text-3xl font-bold">Be a Student</h3></a
+        >
+      </div>
+      <div
+        class="grid gap-4 justify-items-center text-center md:flex-1 headline5">
+        <div class="rounded-full border-8 border-blue-800 p-4">
+          <a
+            href="https://ebookcentral.proquest.com/auth/lib/icanlibnig/login.action?returnURL=https%3A%2F%2Febookcentral.proquest.com%2Flib%2Ficanlibnig%2Fsearch.action">
+            <i class="fa-solid fa-book fa-2x font-green-600"></i>
+          </a>
+        </div>
+        <a
+          href="https://ebookcentral.proquest.com/auth/lib/icanlibnig/login.action?returnURL=https%3A%2F%2Febookcentral.proquest.com%2Flib%2Ficanlibnig%2Fsearch.action">
+          <h3 class="text-3xl font-bold">Our E-Library</h3>
+        </a>
+      </div>
+    </div>
+    <div class="divider div-transparent div-dot"></div>
+
+    <!-- Partner Section -->
+    <section
+      aria-labelledby="partners"
+      class="text-center mt-5 mb-5 grid gap-8 place-items-center naci-150">
+      <div class="grid gap-4">
+        <h2 id="partners" class="text-4xl font-bold text-blue-800">
+          Affiliates and Professional Bodies
+        </h2>
+        <p class="w-full justify-center max-w-lg">
+          ICAN In Conjunction with the following Professional Bodies aim to
+          support individuals professionally and aid them in progressing within
+          their career/profession.
+        </p>
+      </div>
+      <div
+        class="flex flex-wrap justify-center gap-8 md:gap-x-16 max-w-2xl mx-auto">
+        <a href="https://abwa.org.ng/" class="hover:scale-125 ease-in duration-500">
+          <div
+            class="p-4 bg-white dark:bg-neutral-600 shadow-md dark:shadow-xl rounded-md">
+            <img src="assets/img/abwa.jpg" alt="Partner" class="h-16 w-16" />
+          </div>
+        </a>
+        <a
+          href="https://charteredaccountantsworldwide.com/"
+          class="hover:scale-125 ease-in duration-500">
+          <div
+            class="p-4 bg-white dark:bg-neutral-600 shadow-md dark:shadow-xl rounded-md">
+            <img src="assets/img/caw.jpg" alt="Partner" class="h-16 w-16" />
+          </div>
+        </a>
+        <a href="https://www.cimaglobal.com/" class="hover:scale-125 ease-in duration-500">
+          <div
+            class="p-4 bg-white dark:bg-neutral-600 shadow-md dark:shadow-xl rounded-md">
+            <img src="assets/img/cima.jpg" alt="Partner" class="h-16 w-16" />
+          </div>
+        </a>
+        <a
+          href="https://www.cipfa.org/join/joining-from-another-membership-organisation"
+          class="hover:scale-125 ease-in duration-500">
+          <div
+            class="p-4 bg-white dark:bg-neutral-600 shadow-md dark:shadow-xl rounded-md">
+            <img src="assets/img/cipfa.jpg" alt="Partner" class="h-16 w-16" />
+          </div>
+        </a>
+        <a href="https://www.icaew.com/" class="hover:scale-125 ease-in duration-500">
+          <div
+            class="p-4 bg-white dark:bg-neutral-600 shadow-md dark:shadow-xl rounded-md">
+            <img src="assets/img/icaew.jpg" alt="Partner" class="h-16 w-16" />
+          </div>
+        </a>
+        <a href="https://www.ifac.org/" class="hover:scale-125 ease-in duration-500">
+          <div
+            class="p-4 bg-white dark:bg-neutral-600 shadow-md dark:shadow-xl rounded-md">
+            <img src="assets/img/ifac.jpg" alt="Partner" class="h-16 w-16" />
+          </div>
+        </a>
+        <a href="https://www.pafa.org.za/" class="hover:scale-125 ease-in duration-500">
+          <div
+            class="p-4 bg-white dark:bg-neutral-600 shadow-md dark:shadow-xl rounded-md">
+            <img src="assets/img/pafa.jpg" alt="Partner" class="h-16 w-16" />
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- ===================Advert Section================== -->
+    <!-- <div class="bg-blue-900 py-5">
+     <div class="md-macbook-pro md-glare d-none d-md-block">
+                <div class="md-lid">
+                    <div class="md-camera"></div>
+                    <div class="md-screen">
+                                 
+                        <div class="tab-featured-image">
+                            <div class="tab-content">
+                                <div class="tab-pane  in active" id="tab1">
+                                  <div id="proparallax">
+                                    <img class="img img-responsive one" src="https://cdn.pixabay.com/photo/2015/05/07/12/16/apple-756386_1280.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
+                                    <img class="img img-responsive two" src="https://cdn.pixabay.com/photo/2016/01/31/19/41/apple-1172060_1280.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
+                                    <img class="img img-responsive three" src="https://cdn.pixabay.com/photo/2016/01/31/19/41/apple-1172060_1280.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md-base"></div>
+            </div>
+            </div> -->
+    <!-- <div class=" div-transparent divider div-dot"></div> -->
+    <!-- end macbook pro mockup -->
+    <!-- component -->
+    <section class="bg-white dark:bg-black-800">
+      <div
+        class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
+        <div class="w-full lg:w-1/2">
+          <div class="lg:max-w-lg">
+            <h1
+              class="text-3xl font-bold tracking-wide text-black-800 dark:text-dark lg:text-5xl">
+              Here is the Advert section
+            </h1>
+            <div class="mt-8 space-y-5">
+              <p
+                class="flex items-center -mx-2 text-black-700 dark:text-black-200">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mx-2 text-blue-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+                <span class="mx-2">Keep it Clean and Simple</span>
+              </p>
+              <p
+                class="flex items-center -mx-2 text-black-700 dark:text-black-200">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mx-2 text-blue-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+                <span class="mx-2">Poster designs shouldn't be crowdy</span>
+              </p>
+              <p
+                class="flex items-center -mx-2 text-black-700 dark:text-black-200">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mx-2 text-blue-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+                <span class="mx-2">Too much text should not be used on the posters</span>
+              </p>
+              <p
+                class="flex items-center -mx-2 text-black-700 dark:text-black-200">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mx-2 text-blue-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+                <span class="mx-2">Once the poster is clicked, it takes them to the detailed page</span>
+              </p>
+            </div>
+          </div>
+          <div
+            class="w-full mt-8 bg-transparent border rounded-md lg:max-w-sm dark:border-black-700 focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 dark:focus-within:border-blue-400 focus-within:ring-opacity-40">
+            <div class="flex flex-col lg:flex-row">
+              <div
+                class="flex-1 h-10 py-2 m-1 text-black-700 bg-transparent border-none appearance-none dark:text-black-200 focus:outline-none focus:placeholder-transparent focus:ring-0">
+                <marquee behavior="" direction="">
+                  <p>
+                    Other establishment could place advert here... They'll surely have to pay for that 
+                    hence the "Apply now" button. 
+                  </p>
+                </marquee>
+              </div>
+              <button
+                type="button"
+                class="h-10 px-4 py-2 m-1 text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Apply now
+              </button>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Advert enrollment details</h5>
+                  <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  
+              <p
+                class="flex items-center -mx-2 text-black-700 dark:text-black-200">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 mx-2 text-blue-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+                <span class="mx-2">Here the interested clients will have detailed information, terms 
+                  and conditions inclusive on how to get their products / establishmet advertised.</span>
+              </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="Icanbtn btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="Icanbtn btn btn-primary btn-sm">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
+          <div class="md-macbook-pro md-glare d-none d-md-block">
+            <div class="md-lid container">
+              <div class="md-camera"></div>
+              <div class="md-screen">
+                <!-- content goes here -->
+                <div class="tab-featured-image">
+                  <div class="tab-content">
+                    <div class="tab-pane in active" id="tab1">
+                      <div id="proparallax">
+                        <a href="advert.html"><img
+                          class="img img-responsive one"
+                          src="assets/img/52ICAN.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" /></a>
+                        <a href="advert.html"><img
+                          class="img img-responsive two"
+                          src="assets/img/exam.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" /></a>
+                        <a href="advert.html"><img
+                          class="img img-responsive three"
+                          src="assets/img/medical.png?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" /></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md-base"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="fixed inset-x-0 lg:inset-x-auto bottom-6 lg:right-8 xl:right-10 xl:bottom-8">
+        <div class="lg:w-72 px-6 lg:px-0">
+            <div class="p-2 bg-blue-600 rounded-lg shadow-lg sm:p-3">
+                <div class="flex flex-wrap items-center justify-between">
+                    <a target="_blank" href="https://www.buymeacoffee.com/khatabwedaa" class="flex items-center flex-1 w-0">
+                        <span class="flex p-2 bg-blue-800 rounded-lg">
+                            <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.12954 3.00772C5.48563 2.38457 6.14831 2 6.86603 2H17.134C17.8517 2 18.5144 2.38457 18.8704 3.00772L20.0133 5.00772C20.6612 6.14163 20.0618 7.51107 18.9235 7.89532C18.9276 7.97661 18.9269 8.0591 18.9209 8.14249L18.0638 20.1425C17.989 21.1891 17.1181 22 16.0689 22H7.9311C6.88182 22 6.01094 21.1891 5.93618 20.1425L5.07904 8.14249C5.07308 8.0591 5.07231 7.97661 5.07645 7.89531C3.93813 7.51105 3.33874 6.14162 3.98668 5.00772L5.12954 3.00772ZM7.07396 8L7.28824 11H16.7117L16.926 8H7.07396ZM7.71681 17L7.9311 20H16.0689L16.2831 17H7.71681ZM18.2768 6L17.134 4L6.86603 4L5.72317 6H18.2768Z" fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        <p class="ml-3 font-medium tracking-wide text-white truncate">
+                            By me a coffee
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- ================================Advert section ends=========================== -->
+    <!-- component -->
+    <div class="div-transparent divider div-dot"></div>
+    <!-- component -->
+    <main class="py-12 md:px-20 sm:px-14 px-6 bg-blue-800 container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card h-100 rounded-2xl shadow-xl">
+            <a href="#"
+              ><img
+                src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                alt=""
+                class="card-img-top rounded-2xl shadow-xl"
+            /></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a
+                  class="text-2xl font-semibold text-purple-900 mt-3 text-gray-800 text-2xl font-bold my-2"
+                  href="#"
+                  >Know your District</a
+                >
+              </h4>
+              <p class="card-text">
+                Directory of ICAN district societies and chairmen
+              </p>
+              <div class="flex justify-between mt-4">
+                <span class="font-thin text-sm">May 20th 2020</span>
+                <a
+                  href="#"
+                  class="block font-medium text-blue-600 mb-2 font-bold"
+                  >Know more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card h-100 rounded-2xl shadow-xl">
+            <a href="#"
+              ><img
+                src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                alt=""
+                class="card-img-top rounded-2xl shadow-xl"
+            /></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a
+                  class="text-2xl font-semibold text-purple-900 mt-3 text-gray-800 text-2xl font-bold my-2"
+                  href="#"
+                  >ICAN Accredited Institutions</a
+                >
+              </h4>
+              <p class="card-text">
+                Tertiary institution as accredited by the Institute of Chartered Accountants of Nigeria
+              </p>
+              <div class="flex justify-between mt-4">
+                <span class="font-thin text-sm">May 20th 2020</span>
+                <a
+                  href="#"
+                  class="block font-medium text-blue-600 mb-2 font-bold"
+                  >Know more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card h-100 rounded-2xl shadow-xl">
+            <a href="#"
+              ><img
+                src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                alt=""
+                class="card-img-top rounded-2xl shadow-xl"
+            /></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a
+                  class="text-2xl font-semibold text-purple-900 mt-3 text-gray-800 text-2xl font-bold my-2"
+                  href="#"
+                  >Tuition Centres</a
+                >
+              </h4>
+              <p class="card-text">
+                ICAN Approved tuition centres for use of professional students
+              </p>
+              <div class="flex justify-between mt-4">
+                <span class="font-thin text-sm">May 20th 2020</span>
+                <a
+                  href="#"
+                  class="block font-medium text-blue-600 mb-2 font-bold"
+                  >Know more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="div-transparent icangrad"></div>
+    <!-- ============================footer================================== -->
+
+    <!-- ====== Footer Section Start -->
+    <div class="container mt-5">
+      <footer class="bg-white pt-20 lg:pt-[120px] pb-10 lg:pb-20 relative z-10">
+        <div class="container">
+          <div class="flex flex-wrap -mx-4">
+            <div class="w-full sm:w-2/3 lg:w-3/12 px-4">
+              <div class="w-full mb-10">
+                <a
+                  href="javascript:void(0)"
+                  class="inline-block max-w-[160px] mb-6">
+                  <img
+                    src="assets/img/ican_logo.png"
+                    alt="logo"
+                    class="max-w-full" />
+                </a>
+                <p class="text-base text-body-color mb-7">
+                  Sed ut perspiciatis undmnis is iste natus error sit amet
+                  voluptatem totam rem aperiam.
+                </p>
+                <p class="flex items-center text-sm text-dark font-medium">
+                  <span class="text-primary mr-3">
+                    <svg
+                      width="19"
+                      height="21"
+                      viewBox="0 0 19 21"
+                      class="fill-current">
+                      <path
+                        d="M17.8076 11.8129C17.741 11.0475 17.1088 10.5151 16.3434 10.5151H2.16795C1.40261 10.5151 0.803643 11.0808 0.703816 11.8129L0.00502514 18.8008C-0.0282506 19.2001 0.104853 19.6327 0.371059 19.9322C0.637265 20.2317 1.03657 20.398 1.46916 20.398H17.0755C17.4748 20.398 17.8741 20.2317 18.1736 19.9322C18.4398 19.6327 18.5729 19.2334 18.5396 18.8008L17.8076 11.8129ZM17.2751 19.1668C17.2419 19.2001 17.1753 19.2667 17.0422 19.2667H1.46916C1.36933 19.2667 1.2695 19.2001 1.23623 19.1668C1.20295 19.1336 1.1364 19.067 1.16968 18.9339L1.86847 11.9127C1.86847 11.7463 2.00157 11.6465 2.16795 11.6465H16.3767C16.5431 11.6465 16.6429 11.7463 16.6762 11.9127L17.375 18.9339C17.3417 19.0337 17.3084 19.1336 17.2751 19.1668Z" />
+                      <path
+                        d="M9.25704 13.1106C7.95928 13.1106 6.92773 14.1422 6.92773 15.4399C6.92773 16.7377 7.95928 17.7693 9.25704 17.7693C10.5548 17.7693 11.5863 16.7377 11.5863 15.4399C11.5863 14.1422 10.5548 13.1106 9.25704 13.1106ZM9.25704 16.6046C8.6248 16.6046 8.09239 16.0722 8.09239 15.4399C8.09239 14.8077 8.6248 14.2753 9.25704 14.2753C9.88928 14.2753 10.4217 14.8077 10.4217 15.4399C10.4217 16.0722 9.88928 16.6046 9.25704 16.6046Z" />
+                      <path
+                        d="M0.802807 6.05619C0.869358 7.52032 2.16711 8.11928 2.83263 8.11928H5.16193C5.19521 8.11928 5.19521 8.11928 5.19521 8.11928C6.19348 8.05273 7.19175 7.38722 7.19175 6.05619V5.25757C8.28985 5.25757 10.8188 5.25757 11.9169 5.25757V6.05619C11.9169 7.38722 12.9152 8.05273 13.9135 8.11928H13.9467H16.2428C16.9083 8.11928 18.206 7.52032 18.2726 6.05619C18.2726 5.95636 18.2726 5.59033 18.2726 5.25757C18.2726 4.99136 18.2726 4.75843 18.2726 4.72516C18.2726 4.69188 18.2726 4.6586 18.2726 4.6586C18.1727 3.72688 17.84 2.96154 17.2743 2.36258L17.241 2.3293C16.4091 1.56396 15.4109 1.13138 14.6455 0.865169C12.416 0 9.62088 0 9.48778 0C7.52451 0.0332757 6.26003 0.199654 4.36331 0.865169C3.63125 1.0981 2.63297 1.53068 1.80108 2.29603L1.7678 2.3293C1.20212 2.92827 0.869359 3.69361 0.769531 4.62533C0.769531 4.6586 0.769531 4.69188 0.769531 4.69188C0.769531 4.75843 0.769531 4.95809 0.769531 5.22429C0.802807 5.52377 0.802807 5.92308 0.802807 6.05619ZM2.5997 3.12792C3.26521 2.52896 4.09711 2.16292 4.7959 1.89672C6.52624 1.26448 7.65761 1.13138 9.55433 1.0981C9.68743 1.0981 12.2829 1.13138 14.2795 1.89672C14.9783 2.16292 15.8102 2.49568 16.4757 3.12792C16.8417 3.52723 17.0746 4.05964 17.1412 4.69188C17.1412 4.79171 17.1412 4.95809 17.1412 5.22429C17.1412 5.55705 17.1412 5.92308 17.1412 6.02291C17.1079 6.78825 16.3759 6.95463 16.276 6.95463H13.98C13.6472 6.92135 13.1148 6.78825 13.1148 6.05619V4.69188C13.1148 4.42567 12.9485 4.22602 12.7155 4.12619C12.5159 4.05964 6.69262 4.05964 6.49296 4.12619C6.26003 4.19274 6.09365 4.42567 6.09365 4.69188V6.05619C6.09365 6.78825 5.56124 6.92135 5.22848 6.95463H2.93246C2.83263 6.95463 2.10056 6.78825 2.06729 6.02291C2.06729 5.92308 2.06729 5.55705 2.06729 5.22429C2.06729 4.95809 2.06729 4.82498 2.06729 4.72516C2.00073 4.05964 2.23366 3.52723 2.5997 3.12792Z" />
+                    </svg>
+                  </span>
+                  <span>+012 (345) 678 99</span>
+                </p>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-2/12 px-4">
+              <div class="w-full mb-10">
+                <h4 class="text-dark text-lg font-semibold mb-9">Resources</h4>
+                <ul>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      SaaS Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      Our Products
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      User Flow
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      User Strategy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-2/12 px-4">
+              <div class="w-full mb-10">
+                <h4 class="text-dark text-lg font-semibold mb-9">Company</h4>
+                <ul>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      About TailGrids
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      Contact & Support
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      Success History
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      Setting & Privacy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-2/12 px-4">
+              <div class="w-full mb-10">
+                <h4 class="text-dark text-lg font-semibold mb-9">
+                  Quick Links
+                </h4>
+                <ul>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      Premium Support
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      Our Services
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      Know Our Team
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
+                      Download App
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-3/12 px-4">
+              <div class="w-full mb-10">
+                <h4 class="text-dark text-lg font-semibold mb-9">
+                  Follow Us On
+                </h4>
+                <div class="flex items-center mb-6">
+                  <a
+                    class="w-8 h-8 flex items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:text-white hover:bg-primary hover:border-primary mr-3 sm:mr-4 lg:mr-3 xl:mr-4"
+                    href="https://www.facebook.com/pages/The-Institute-of-Chartered-Accountants-of-Nigeria-ICAN/408218229260845"
+                    target="_blank"
+                    ><i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a
+                    class="w-8 h-8 flex items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:text-white hover:bg-primary hover:border-primary mr-3 sm:mr-4 lg:mr-3 xl:mr-4"
+                    href="https://twitter.com/ICAN_NGR"
+                    target="_blank"
+                    ><i class="fa-brands fa-twitter"></i
+                  ></a>
+                  <a class="w-8 h-8 flex items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:text-white hover:bg-primary hover:border-primary mr-3 sm:mr-4 lg:mr-3 xl:mr-4" href="https://www.instagram.com/ican_ng/" target="_blank"
+                    ><i class="fa-brands fa-instagram"></i></a>
+                  </a>
+                  <a class="w-8 h-8 flex items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:text-white hover:bg-primary hover:border-primary mr-3 sm:mr-4 lg:mr-3 xl:mr-4" href="https://ng.linkedin.com/in/ican1965" target="_blank"
+                    ><i class="fa-brands fa-linkedin"></i></a>
+                  </a>
+                </div>
+                <p class="text-base text-body-color">&copy; <script>document.write(new Date().getFullYear())</script> <a href="index.php">ICAN</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="absolute left-0 bottom-0 z-[-1]">
+            <svg
+              width="217"
+              height="229"
+              viewBox="0 0 217 229"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z"
+                fill="url(#paint0_linear_1179_5)" />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1179_5"
+                  x1="76.5"
+                  y1="281"
+                  x2="76.5"
+                  y2="1.22829e-05"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3056D3" stop-opacity="0.08" />
+                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="absolute top-10 right-10 z-[-1]">
+            <svg
+              width="75"
+              height="75"
+              viewBox="0 0 75 75"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
+                fill="url(#paint0_linear_1179_4)" />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1179_4"
+                  x1="-1.63917e-06"
+                  y1="37.5"
+                  x2="75"
+                  y2="37.5"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#13C296" stop-opacity="0.31" />
+                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </div>
+      </footer>
+    </div>
+    <!-- ====== Footer Section End -->
+ 
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      // /*==================== SCROLL REVEAL ANIMATION ====================*/
+
+      const sr = ScrollReveal({
+        origin: "top",
+        distance: "30px",
+        duration: 2000,
+        reset: true,
+      });
+
+      sr.reveal(
+        `.home__data, .home__img,
+            .about__data, .about__img,
+            .services__content, .menu__content,
+            .app__data, .app__img,
+            .contact__data, .contact__button,
+            .footer__content`,
+        {
+          interval: 200,
+        }
+      );
+      // ScrollReveal().reveal(
+      //   ".headline1",
+      //   ".headline2",
+      //   ".headline3",
+      //   ".headline4",
+      //   ".headline5",
+      //   {
+      //     interval: 200,
+      //   }
+      // );
+    </script>
+    <script src="assets/tailwindcss/3.1.8/tailwind.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
