@@ -19,7 +19,7 @@ a{
     text-decoration: none;
 }
 a:hover{
-    color:#28df99cc !important;
+    color:#fff !important;
 }
 
 header{
@@ -49,7 +49,7 @@ section{
 }
 
 .contain{
-    max-width: 65rem;
+    max-width: 75rem;
     padding: 0 2rem;
     margin: 0 auto;
     display: flex;
@@ -252,7 +252,7 @@ section{
     width: 1.6rem;
     height: 3px;
     border-radius: 3px;
-    background-color: #fff;
+    background-color: #000;
     position: relative;
     z-index: 1001;
     transition: .5s;
@@ -264,7 +264,7 @@ section{
     position: absolute;
     width: inherit;
     height: inherit;
-    background-color: #fff;
+    background-color: #000;
     border-radius: 3px;
     transition: .5s;
 }
@@ -328,7 +328,7 @@ section{
         top: 3rem;
         left: 0;
         width: 100%;
-        background-color: #69bde7;
+        background-color: #15076f;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
@@ -369,7 +369,7 @@ section{
 
     .nav-link:hover > a{
         transform: scale(1);
-        background-color: #50a9d6;
+        background-color: #060686;
     }
 
     .dropdown, .dropdown.second{
@@ -381,7 +381,8 @@ section{
         pointer-events: auto;
         width: 100%;
         padding: 0;
-        background-color: #3183ac;
+        border: 2px dashed blue;
+        background-color: #0aae36;
         display: none;
     }
     
@@ -513,7 +514,7 @@ section{
 }
 .scroll-y {
     overflow-y: scroll;
-    height: 500px
+    height: 300px
 }
 .my-card {
   background-color: #fff;

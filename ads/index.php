@@ -1,251 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ICAN | Adverts</title>
-    <link href="assets/img/ican_logo.jpg" rel="icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/naci/css/naci.css" />
-    <style></style>
-  </head>
+<?php
+    include "../assets/links/head.php";
+    include "../assets/links/nav.php";
+?>
   <body>
-    <header class="shadow py-2">
-      <div class="contain">
-        <input type="checkbox" name="" id="check" />
-
-        <div class="logo-contain">
-          <!-- <h3 class="logo">Brand<span>Name</span></h3> -->
-          <a href="index.html" class="logo align-items-center">
-            <img src="assets/img/ican_logo.png" alt="" style="height: 50px" />
-          </a>
-        </div>
-
-        <div class="nav-btn">
-          <div class="nav-links">
-            <ul class="widget-list">
-              <li class="nav-link" style="--i: 0.6s">
-                <a href="#">Home</a>
-              </li>
-              <li class="nav-link" style="--i: 0.6s">
-                <a href="#">Members</a>
-              </li>
-              <li class="nav-link" style="--i: 0.85s">
-                <a href="#">Students<i class="fa fa-caret-down"></i></a>
-                <div class="dropdown">
-                  <ul class="widget-list">
-                    <li class="dropdown-link">
-                      <a href="#">My ICAN<i class="fa fa-caret-down"></i></a>
-                      <div class="dropdown second">
-                        <ul class="overflow-y-scroll hide-scroll h-96">
-                          <li class="dropdown-link">
-                            <a href="#">Financial Status</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Application for Induction</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Profile Update</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Financial Status</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Application for Induction</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Profile Update</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Financial Status</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Application for Induction</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Profile Update</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Financial Status</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Application for Induction</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Profile Update</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">More<i class="fa fa-caret-down"></i></a>
-                            <div class="dropdown second">
-                              <ul class="widget-list">
-                                <li class="dropdown-link">
-                                  <a href="#">Link 1</a>
-                                </li>
-                                <li class="dropdown-link">
-                                  <a href="#">Link 2</a>
-                                </li>
-                                <li class="dropdown-link">
-                                  <a href="#">Link 3</a>
-                                </li>
-                                <div class="arrow"></div>
-                              </ul>
-                            </div>
-                          </li>
-                          <div class="arrow"></div>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">Link 1</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">Link 2</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">Link 3<i class="fa fa-caret-down"></i></a>
-                      <div class="dropdown second">
-                        <ul class="widget-list">
-                          <li class="dropdown-link">
-                            <a href="#">Link 1</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Link 2</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Link 3</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">More<i class="fa fa-caret-down"></i></a>
-                            <div class="dropdown second">
-                              <ul class="widget-list">
-                                <li class="dropdown-link">
-                                  <a href="#">Link 1</a>
-                                </li>
-                                <li class="dropdown-link">
-                                  <a href="#">Link 2</a>
-                                </li>
-                                <li class="dropdown-link">
-                                  <a href="#">Link 3</a>
-                                </li>
-                                <div class="arrow"></div>
-                              </ul>
-                            </div>
-                          </li>
-                          <div class="arrow"></div>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">Link 4</a>
-                    </li>
-                    <div class="arrow"></div>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-link" style="--i: 1.1s">
-                <a href="#">Services<i class="fa fa-caret-down"></i></a>
-                <div class="dropdown">
-                  <ul class="widget-list">
-                    <li class="dropdown-link">
-                      <a href="#">Link 1</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">Link 2</a>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">Link 3<i class="fa fa-caret-down"></i></a>
-                      <div class="dropdown second">
-                        <ul class="widget-list">
-                          <li class="dropdown-link">
-                            <a href="#">Link 1</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Link 2</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">Link 3</a>
-                          </li>
-                          <li class="dropdown-link">
-                            <a href="#">More<i class="fa fa-caret-down"></i></a>
-                            <div class="dropdown second">
-                              <ul class="widget-list">
-                                <li class="dropdown-link">
-                                  <a href="#">Link 1</a>
-                                </li>
-                                <li class="dropdown-link">
-                                  <a href="#">Link 2</a>
-                                </li>
-                                <li class="dropdown-link">
-                                  <a href="#">Link 3</a>
-                                </li>
-                                <div class="arrow"></div>
-                              </ul>
-                            </div>
-                          </li>
-                          <div class="arrow"></div>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="dropdown-link">
-                      <a href="#">Link 4</a>
-                    </li>
-                    <div class="arrow"></div>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-link" style="--i: 1.35s">
-                <a href="#">About</a>
-              </li>
-            </ul>
-          </div>
-          <div class="relative text-gray-600 mt-1">
-            <input
-              type="search"
-              name="serch"
-              placeholder="Search"
-              class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" />
-            <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-              <svg
-                class="h-4 w-4 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                version="1.1"
-                id="Capa_1"
-                x="0px"
-                y="0px"
-                viewBox="0 0 56.966 56.966"
-                style="enable-background: new 0 0 56.966 56.966"
-                xml:space="preserve"
-                width="512px"
-                height="512px">
-                <path
-                  d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="hamburger-menu-contain">
-          <div class="hamburger-menu">
-            <div></div>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <!-- component -->
-
     <div class="bg-white py-6">
       <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
         <!-- big grid 1 -->
@@ -257,13 +15,13 @@
               <a href="#">
                 <img
                   class="max-w-full w-full mx-auto h-auto headline"
-                  src="assets/img/event.jpg"
+                  src="../assets/img/event.jpg"
                   alt="Image description" />
               </a>
               <div
                 class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                 <a href="#">
-                  <h2 class="text-3xl font-bold capitalize text-blue-500 bg-gray-100 mb-3 tagline">
+                  <h2 class="text-3xl font-bold capitalize text-blue-800 rounded bg-gray-100 bg-opacity-50 mb-3 tagline">
                     52nd Annual Accountants Conference 2022
                   </h2>
                 </a>
@@ -289,14 +47,14 @@
                   <a href="#">
                     <img
                       class="max-w-full w-full mx-auto h-auto tagline"
-                      src="assets/img/1exam.png"
+                      src="../assets/img/1exam.png"
                       alt="Image description" />
                   </a>
                   <div
                     class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
                     <a href="#">
                       <h2
-                        class="text-lg font-bold capitalize punchline leading-tight text-blue-500 bg-gray-100 mb-1">
+                        class="text-lg font-bold capitalize punchline leading-tight text-blue-800 rounded bg-gray-100 bg-opacity-50 mb-1">
                         First sitting success in ICAN and ATS exams
                       </h2>
                     </a>
@@ -315,14 +73,14 @@
                   <a href="#">
                     <img
                       class="max-w-full w-full mx-auto h-auto tagline"
-                      src="assets/img/evaluation.jpg"
+                      src="../assets/img/evaluation.jpg"
                       alt="Image description" />
                   </a>
                   <div
                     class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
                     <a href="#">
                       <h2
-                        class="text-lg font-bold capitalize punchline leading-tight text-blue-500 bg-gray-100 mb-1">
+                        class="text-lg font-bold capitalize punchline leading-tight text-blue-800 rounded bg-gray-100 bg-opacity-50 mb-1">
                         Professional Exams whatever
                       </h2>
                     </a>
@@ -341,14 +99,14 @@
                   <a href="#">
                     <img
                       class="max-w-full w-full mx-auto h-auto tagline"
-                      src="assets/img/passport.jpg"
+                      src="../assets/img/passport.jpg"
                       alt="Image description" />
                   </a>
                   <div
                     class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
                     <a href="#">
                       <h2
-                        class="text-lg font-bold capitalize punchline leading-tight text-blue-500 bg-gray-100 mb-1">
+                        class="text-lg font-bold capitalize punchline leading-tight text-blue-800 rounded bg-gray-100 bg-opacity-50 mb-1">
                         Your passwort to a global career
                       </h2>
                     </a>
@@ -374,7 +132,7 @@
                     class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
                     <a href="#">
                       <h2
-                        class="text-lg font-bold capitalize punchline leading-tight text-blue-500 bg-gray-100 mb-1">
+                        class="text-lg font-bold capitalize punchline leading-tight text-blue-800 rounded bg-gray-100 bg-opacity-50 mb-1">
                         Online taxi users are increasing drastically ahead of
                         the new year
                       </h2>
@@ -383,7 +141,7 @@
                       <div class="text-gray-100">
                         <div
                           class="inline-block h-3 border-l-2 border-green-600 mr-2"></div>
-                        Thirdparty;
+                        Thirdparty
                       </div>
                     </div>
                   </div>
@@ -406,13 +164,13 @@
               <div class="w-full xl:w-1/2 px-3 sm:px-4">
                 <div class="py-3 sm:py-4">
                   <img
-                    src="assets/img/fullmedical.png"
+                    src="../assets/img/fullmedical.png"
                     alt=""
                     class="rounded-2xl w-full widget" />
                 </div>
                 <div class="py-3 sm:py-4">
                   <img
-                    src="assets/img/happy.jpg"
+                    src="../assets/img/happy.jpg"
                     alt=""
                     class="rounded-2xl w-full widget" />
                 </div>
@@ -420,7 +178,7 @@
               <div class="w-full xl:w-1/2 px-3 sm:px-4">
                 <div class="my-4 relative z-10">
                   <img
-                    src="assets/img/family.jpg"
+                    src="../assets/img/family.jpg"
                     alt=""
                     class="rounded-2xl w-full widget" />
                   <span class="absolute -right-7 -bottom-7 z-[-1]">
@@ -958,7 +716,7 @@
 
         <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
             <div class="lg:flex">
-                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="assets/img/announcement.jpg" alt="">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="../assets/img/announcement.jpg" alt="">
 
                 <div class="flex flex-col justify-between py-6 lg:mx-6">
                     <a href="#" class="tagline text-xl font-semibold text-gray-800 hover:underline dark:text-white ">
@@ -970,7 +728,7 @@
             </div>
 
             <div class="lg:flex">
-                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="assets/img/accountant.jpg" alt="">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="../assets/img/accountant.jpg" alt="">
 
                 <div class="flex flex-col justify-between py-6 lg:mx-6">
                     <a href="#" class="tagline text-xl font-semibold text-gray-800 hover:underline dark:text-white ">
@@ -982,7 +740,7 @@
             </div>
 
             <div class="lg:flex">
-                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="assets/img/announcement.jpg" alt="">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="../assets/img/announcement.jpg" alt="">
 
                 <div class="flex flex-col justify-between py-6 lg:mx-6">
                     <a href="#" class="tagline text-xl font-semibold text-gray-800 hover:underline dark:text-white ">
@@ -994,7 +752,7 @@
             </div>
 
             <div class="lg:flex">
-                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="assets/img/a.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1547&q=80" alt="">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="../assets/img/a.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1547&q=80" alt="">
 
                 <div class="flex flex-col justify-between py-6 lg:mx-6">
                     <a href="#" class="tagline text-xl font-semibold text-gray-800 hover:underline dark:text-white ">
@@ -1006,7 +764,7 @@
             </div>
 
             <div class="lg:flex">
-                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline headline" src="assets/img/a.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1484&q=80" alt="">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline headline" src="../assets/img/a.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1484&q=80" alt="">
 
                 <div class="flex flex-col justify-between py-6 lg:mx-6">
                     <a href="#" class="tagline text-xl font-semibold tagline text-gray-800 hover:underline dark:text-white ">
@@ -1018,7 +776,7 @@
             </div>
 
             <div class="lg:flex">
-                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="assets/img/accountant.jpg" alt="">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64 headline" src="../assets/img/accountant.jpg" alt="">
 
                 <div class="flex flex-col justify-between py-6 lg:mx-6">
                     <a href="#" class="tagline text-xl font-semibold text-gray-800 hover:underline dark:text-white ">
@@ -1032,281 +790,11 @@
         </div>
     </div>
 </section>
-    <div class="div-transparent icangrad"></div>
 <!-- =======================More ads ends====================== -->
 
-        <!-- ====== Footer Section Start -->
-    <div class="container mt-5">
-      <footer class="bg-white pt-20 lg:pt-[120px] pb-10 lg:pb-20 relative z-10">
-        <div class="container">
-          <div class="flex flex-wrap -mx-4">
-            <div class="w-full sm:w-2/3 lg:w-3/12 px-4">
-              <div class="w-full mb-10">
-                <a
-                  href="javascript:void(0)"
-                  class="inline-block max-w-[160px] mb-6">
-                  <img
-                    src="assets/img/ican_logo.png"
-                    alt="logo"
-                    class="max-w-full" />
-                </a>
-                <p class="text-base text-body-color mb-5 headline">
-                  Sed ut perspiciatis undmnis is iste natus error sit amet
-                  voluptatem totam rem aperiam.
-                  <span class="text-primary mr-3">
-                    <i class="fa-solid fa-envelope"></i>
-                  </span>
-                  <span>info.ican@ican.org.ng</span>
-                </p>
-                <p class="flex items-center text-sm text-dark font-medium">
-                  <span class="text-primary mr-3">
-                    <i class="fa-solid fa-phone-volume"></i>
-                  </span>
-                  <span>+234905384710</span>
-                </p>
-              </div>
-            </div>
-            <div class="w-full sm:w-1/2 lg:w-2/12 px-4">
-              <div class="w-full mb-10">
-                <h4 class="text-dark text-lg font-semibold mb-9">About ICAN</h4>
-                <ul class="widget-list">
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      Governance
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      Management Team
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      Vision and Mission
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      Technical Helpdesk
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="w-full sm:w-1/2 lg:w-2/12 px-4">
-              <div class="w-full mb-10">
-                <h4 class="text-dark text-lg font-semibold mb-9">Sections</h4>
-                <ul class="widget-list">
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      Members
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      Students
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      FACULTY
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      MPD
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      JOB CENTER
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="w-full sm:w-1/2 lg:w-2/12 px-4">
-              <div class="w-full mb-10">
-                <h4 class="text-dark text-lg font-semibold mb-9">
-                  Journals
-                </h4>
-                <ul class="widget-list">
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      ICAN Students' Journal
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      The Nigerian Accountant
-                    </a>
-                  </li>
-                  <li class="tagline">
-                    <a
-                      href="javascript:void(0)"
-                      class="inline-block text-base text-body-color hover:text-primary leading-loose mb-2">
-                      ICAN Technical Bulletin
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="w-full sm:w-1/2 lg:w-3/12 px-4">
-              <div class="w-full mb-10">
-                <h4 class="text-dark text-lg font-semibold mb-9">
-                  Follow Us On
-                </h4>
-                <div class="flex items-center mb-6">
-                  <a
-                    class="w-8 h-8 flex items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:text-white hover:bg-primary hover:border-primary mr-3 sm:mr-4 lg:mr-3 xl:mr-4"
-                    href="https://www.facebook.com/pages/The-Institute-of-Chartered-Accountants-of-Nigeria-ICAN/408218229260845"
-                    target="_blank"
-                    ><i class="fa-brands fa-facebook"></i>
-                  </a>
-                  <a
-                    class="w-8 h-8 flex items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:text-white hover:bg-primary hover:border-primary mr-3 sm:mr-4 lg:mr-3 xl:mr-4"
-                    href="https://twitter.com/ICAN_NGR"
-                    target="_blank"
-                    ><i class="fa-brands fa-twitter"></i
-                  ></a>
-                  <a class="w-8 h-8 flex items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:text-white hover:bg-primary hover:border-primary mr-3 sm:mr-4 lg:mr-3 xl:mr-4" href="https://www.instagram.com/ican_ng/" target="_blank"
-                    ><i class="fa-brands fa-instagram"></i></a>
-                  </a>
-                  <a class="w-8 h-8 flex items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:text-white hover:bg-primary hover:border-primary mr-3 sm:mr-4 lg:mr-3 xl:mr-4" href="https://ng.linkedin.com/in/ican1965" target="_blank"
-                    ><i class="fa-brands fa-linkedin"></i></a>
-                  </a>
-                  <a
-                    class="w-8 h-8 flex items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:text-white hover:bg-primary hover:border-primary mr-3 sm:mr-4 lg:mr-3 xl:mr-4"
-                    href="https://twitter.com/ICAN_NGR"
-                    target="_blank"
-                    ><i class="fa-brands fa-youtube"></i
-                  ></a>
-                </div>
-                <p class="text-base text-body-color">&copy; <script>document.write(new Date().getFullYear())</script> <a href="index.php">ICAN</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <span class="absolute left-0 bottom-0 z-[-1]">
-            <svg
-              width="217"
-              height="229"
-              viewBox="0 0 217 229"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z"
-                fill="url(#paint0_linear_1179_5)" />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_1179_5"
-                  x1="76.5"
-                  y1="281"
-                  x2="76.5"
-                  y2="1.22829e-05"
-                  gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#3056D3" stop-opacity="0.08" />
-                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
-          <span class="absolute top-10 right-10 z-[-1]">
-            <svg
-              width="75"
-              height="75"
-              viewBox="0 0 75 75"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
-                fill="url(#paint0_linear_1179_4)" />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_1179_4"
-                  x1="-1.63917e-06"
-                  y1="37.5"
-                  x2="75"
-                  y2="37.5"
-                  gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#13C296" stop-opacity="0.31" />
-                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
-        </div>
-      </footer>
-    </div>
-    <!-- ====== Footer Section End -->
- 
-   
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-        ScrollReveal({ reset: true });
-        ScrollReveal({ duration: 2000});
-    
-    
-		ScrollReveal().reveal('.headline', { origin: 'top', distance: '30px', delay: 200 })
-		ScrollReveal().reveal('.tagline', { origin: 'top', distance: '30px', delay: 500 })
-		ScrollReveal().reveal('.punchline', { origin: 'top', distance: '30px', delay: 2000 })
-    ScrollReveal().reveal('.widget', { interval: 900, delay: 500});
-	</script>
-    <!--
-    <script>
-      const sr = ScrollReveal({
-        origin: "top",
-        distance: "30px",
-        duration: 2000,
-        reset: true,
-      });
 
-      sr.reveal(
-        `.home__data, .home__img,
-            .about__data, .about__img,
-            .services__content, .menu__content,
-            .app__data, .app__img,
-            .contact__data, .contact__button,
-            .footer__content`,
-        {
-          interval: 200,
-        }
-      );
-    </script> -->
-    <script src="assets/tailwindcss/3.1.8/tailwind.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"></script>
+    <?php
+      include "../assets/links/foot.php";
+    ?>
   </body>
 </html>
